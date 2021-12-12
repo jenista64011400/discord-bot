@@ -57,7 +57,7 @@ async def help(ctx):
 @bot.command()
 async def todolist(ctx):
     emBed = discord.Embed(title="tutorial bot help",description= 'all available bot command', color=0x42f5a7)
-    emBed.add_field(name="Work1", value='description', inline=False )
+    emBed.add_field(name="python", value='homework in goedu', inline=False )
     emBed.add_field(name="work2", value='description', inline=False )
     emBed.add_field(name="work3", value='description', inline=False )
     emBed.set_image(url='https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-07-30/homework.jpg')
