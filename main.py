@@ -262,4 +262,4 @@ async def queueList(ctx):
 
 
 
-bot.run('OTA0Mjg3Nzk3ODY1NzY2OTEz.YX5Vow.T1DWmX9ZGkD8KO51h59MIoIfW14')
+bot.run(token)
