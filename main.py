@@ -56,7 +56,7 @@ async def help(ctx):
 
 @bot.command()
 async def todolist(ctx):
-    emBed = discord.Embed(title="tutorial bot help",description= 'all available bot command', color=0x42f5a7)
+    emBed = discord.Embed(title="Homework & test",description= 'All works that need to be done', color=0x42f5a7)
     emBed.add_field(name="python", value='homework in goedu', inline=False )
     emBed.add_field(name="work2", value='description', inline=False )
     emBed.add_field(name="work3", value='description', inline=False )
@@ -72,7 +72,6 @@ async def link(ctx):
     emBed = discord.Embed(title="Class access",description= 'all the link to the class', color=0x42f5a7)
     emBed.add_field(name="Cal", value='https://zoom.us/j/5455256896', inline=False )
     emBed.add_field(name="Python", value='https://meet.google.com/bri-xukh-vfz', inline=False )
-    
     emBed.set_author(name='Link board',icon_url=image)
     emBed.set_footer(text='click the link to get in',icon_url=image)
 
