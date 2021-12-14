@@ -42,7 +42,7 @@ async def test(ctx, *, par):
 async def help(ctx):
     image = 'https://i.pinimg.com/originals/b8/5d/0b/b85d0b60c0283fe7fd3f34cd0df87f15.png'
     emBed = discord.Embed(title="tutorial bot help",description= 'all available bot command', color=0x42f5a7)
-    emBed.add_field(name="!help", value='get help command', inline=False )
+    emBed.add_field(name="!schedule", value='show us class schedule', inline=False )
     emBed.add_field(name="!test", value='respond to message that you have sent', inline=False )
     emBed.add_field(name="!bot", value='introduce bot', inline=False )
     emBed.add_field(name="!todolist", value='list of homework or test', inline=False )
@@ -73,7 +73,7 @@ async def link(ctx):
     emBed.add_field(name="Cal", value='https://zoom.us/j/5455256896', inline=False )
     emBed.add_field(name="Python", value='https://meet.google.com/bri-xukh-vfz', inline=False )
     emBed.set_author(name='Link board',icon_url=image)
-    emBed.set_footer(text='click the link to get in',icon_url=image)
+    emBed.set_footer(text='click the link to join the class',icon_url=image)
 
     await ctx.channel.send(embed=emBed)
 
@@ -189,12 +189,6 @@ async def remind(ctx,time,*,task):
     emBed.add_field(name="Time left",value=f'0 days 0 hours 0 minutes 0 seconds',inline=False)
     await ctx.channel.send(embed=emBed)
 
-@bot.command()
-async def poll(ctx,*,message):
-    emBed = discord.Embed(title="Poll",description=f"{message}", color=0x42f5a7)
-    msg=await ctx.channel.send(embed=emBed)
-    await msg.add_reactiion('👍🏻')
-    await msg.add_reactiion('👎🏻')
 
 
 #bot interact message
