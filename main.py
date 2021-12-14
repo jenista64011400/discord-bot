@@ -57,7 +57,7 @@ async def help(ctx):
 @bot.command()
 async def todolist(ctx):
     emBed = discord.Embed(title="Homework & test",description= 'All works that need to be done', color=0x42f5a7)
-    emBed.add_field(name="python", value='homework in goedu', inline=False )
+    emBed.add_field(name="work1", value='description', inline=False )
     emBed.add_field(name="work2", value='description', inline=False )
     emBed.add_field(name="work3", value='description', inline=False )
     emBed.set_image(url='https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-07-30/homework.jpg')
@@ -141,7 +141,7 @@ async def remind(ctx,time,*,task):
         return
 
     if convert_time == -2:
-        await ctx.send("It must be aN InTeGEr U DumB BItCh")
+        await ctx.send("Input must be integer")
         return
 
     emBed = discord.Embed(title="Reminder started",color=0x42f5a7)
