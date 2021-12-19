@@ -29,6 +29,30 @@ bot = commands.Bot(command_prefix='!', help_command = None)
 
 aboutSong=songAPI()
 
+toDoDB = []
+@bot.command()
+async def addToDo(ctx,*,task):
+    global todoDB
+    toDoDB.append(">"+ task +" ")
+    emBed = discord.Embed(title="ToDo List",color=0x42f5a7)
+    emBed.add_field(name="todo: ", value = "\n".join(toDoDB), inline=False)
+    await ctx.channel.send(embed=emBed)
+@bot.command()
+async def done(ctx, *,task):
+    global toDoDB
+    print(toDoDB)
+    toDoDB.remove(">"+ task + " ")
+    await ctx.channel.send(task +" is done. !")
+    emBed = discord.Embed(title="ToDo List", color=0x42f5a7)
+    emBed.add_field(name="todo : ",value = "\n".join(toDoDB), inline=False)
+    await ctx.channel.send(embed=emBed)
+@bot.command()
+async def todoList(ctx):
+    emBed = discord.Embed(title="ToDo List",color=0x2f5a7)
+    emBed.add_field(name="todo : ",value = "\n".join(toDoDB), inline=False)
+    await ctx.channel.send(embed=emBed)
+
+
 #bot online
 @bot.event
 async def on_ready():
@@ -54,15 +78,6 @@ async def help(ctx):
     await ctx.channel.send(embed=emBed)
 
 
-@bot.command()
-async def todolist(ctx):
-    emBed = discord.Embed(title="Homework & test",description= 'All works that need to be done', color=0x42f5a7)
-    emBed.add_field(name="work1", value='description', inline=False )
-    emBed.add_field(name="work2", value='description', inline=False )
-    emBed.add_field(name="work3", value='description', inline=False )
-    emBed.set_image(url='https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-07-30/homework.jpg')
-    
-    await ctx.channel.send(embed=emBed)
 
 
 
@@ -168,7 +183,7 @@ async def remind(ctx,time,*,task):
     await ctx.channel.send(embed=emBed)
 
     await asyncio.sleep(time/4)
-    emBed = discord.Embed(title="Reminder to slap the shit out of your lazy ass",color=0x42f5a7)
+    emBed = discord.Embed(title="Reminder for your lazy ass",color=0x42f5a7)
     emBed.add_field(name="Reminder",value=task,inline=False)
     emBed.add_field(name="From",value=ctx.author.mention,inline=False)
     if qday == 0.0:
